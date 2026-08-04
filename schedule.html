@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Расписание — Red Light | Студия пилатеса с Red Light терапией, Москва</title>
+<meta name="description" content="Расписание тренировок Red Light Pilates в Москве: занятия на LED-ковриках в пространстве «Место be», Мясницкая 24/7с1. Онлайн-запись.">
+<link rel="canonical" href="https://lopushokbot.github.io/redlight-studio/schedule.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Red Light">
+<meta property="og:title" content="Расписание тренировок — Red Light">
+<meta property="og:description" content="Тренировки пилатеса на LED-ковриках в центре Москвы. Малые группы, запись онлайн.">
+<meta property="og:image" content="https://lopushokbot.github.io/redlight-studio/img/og.jpg">
+<meta property="og:url" content="https://lopushokbot.github.io/redlight-studio/schedule.html">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
+<link rel="apple-touch-icon" href="img/favicon-192.png">
+<link rel="preload" href="fonts/tenorsans-400-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/tenorsans-400-lat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo" aria-label="Red Light — на главную">
+      <img class="nav__img" src="img/logo.jpg" alt="Логотип Red Light" width="640" height="640">
+      <span class="nav__name">Red&nbsp;Light</span>
+    </a>
+    <nav class="nav__links" aria-label="Основная навигация">
+      <a href="index.html#prices">Цены</a>
+      <a href="index.html#team">Команда</a>
+      <a href="schedule.html" class="is-active">Расписание</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--red btn--sm nav__cta" href="#booking">Записаться</a>
+      <button class="nav__burger" id="burger" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="nav__mobile" id="navMobile" aria-label="Мобильная навигация">
+    <a href="index.html#prices">Цены</a>
+    <a href="index.html#team">Команда</a>
+    <a href="schedule.html">Расписание</a>
+    <a href="index.html#contacts">Контакты</a>
+    <a href="#booking">Записаться</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" style="padding-bottom: 0;">
+    <div class="container">
+      <p class="eyebrow">Расписание</p>
+      <h1 class="h1">Ближайшие тренировки</h1>
+    </div>
+  </section>
+
+  <section class="section" id="schedule">
+    <div class="container">
+      <div class="sched">
+        <div class="sched__row reveal">
+          <span class="sched__day">Четверг</span>
+          <span class="sched__time">15:30</span>
+          <span class="sched__what">Red Light Pilates · 55 мин · малая группа</span>
+          <a class="btn btn--sm" href="#booking">Записаться</a>
+        </div>
+        <div class="sched__row reveal">
+          <span class="sched__day">Воскресенье</span>
+          <span class="sched__time">17:00</span>
+          <span class="sched__what">Red Light Pilates · 55 мин · малая группа</span>
+          <a class="btn btn--sm" href="#booking">Записаться</a>
+        </div>
+      </div>
+      <p class="note reveal">Все тренировки проходят в&nbsp;пространстве «Место be»: <a href="https://yandex.ru/maps/-/CPcUm65t" target="_blank" rel="noopener">Мясницкая улица, 24/7с1</a>. Актуальные даты и&nbsp;свободные места — в&nbsp;нашем <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram-канале</a>. Группы небольшие, места заканчиваются быстро.</p>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section section--cream" id="booking">
+    <div class="container container--narrow center">
+      <p class="eyebrow reveal">Запись</p>
+      <h2 class="h2 reveal">Записаться на&nbsp;тренировку</h2>
+      <p class="lead reveal">Оставьте заявку — мы свяжемся с&nbsp;вами, подтвердим место и&nbsp;ответим на&nbsp;вопросы.</p>
+      <form class="form reveal" id="bookingForm" novalidate>
+        <div class="form__grid">
+          <div class="field">
+            <label for="fName">Имя</label>
+            <input id="fName" name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться">
+          </div>
+          <div class="field">
+            <label for="fPhone">Телефон</label>
+            <input id="fPhone" name="phone" type="tel" autocomplete="tel" required placeholder="+7 ___ ___-__-__">
+          </div>
+        </div>
+        <div class="field">
+          <label for="fSlot">Тренировка</label>
+          <select id="fSlot" name="slot" required>
+            <option value="" disabled selected>Выберите время</option>
+            <option>Четверг · 15:30</option>
+            <option>Воскресенье · 17:00</option>
+            <option>Другое время / уточнить</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fMsg">Комментарий</label>
+          <textarea id="fMsg" name="message" placeholder="Опыт в пилатесе, вопросы — всё, что нам стоит знать (необязательно)"></textarea>
+        </div>
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <button class="btn btn--red form__submit" type="submit" id="submitBtn">Отправить заявку</button>
+        <p class="form__status" id="formStatus" role="status"></p>
+        <p class="form__hint">Нажимая «Отправить», вы соглашаетесь на обработку персональных данных. Удобнее мессенджер? Напишите в <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram</a>.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img class="footer__img" src="img/logo.jpg" alt="Red Light" width="640" height="640">
+      <p>© 2026 Red Light — студия пилатеса с Red Light терапией, Москва</p>
+    </div>
+    <div class="footer__links">
+      <a href="index.html">Главная</a>
+      <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://www.instagram.com/redlightmsk" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

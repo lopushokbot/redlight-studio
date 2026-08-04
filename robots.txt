@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lopushokbot.github.io/redlight-studio/sitemap.xml
