@@ -7,25 +7,28 @@ Landing page for Sema's red light pilates startup **Red Light** (Moscow). The fi
 - **Brand**: Red Light, neon "RL" logo (red neon on black) — `img/logo.jpg` (source: Mac mini Desktop)
 - **Instagram**: https://www.instagram.com/redlightmsk (185 followers)
 - **Telegram**: https://t.me/redlightmsk ("Red light" channel; secondary booking path)
-- **Location**: trainings at «Место be», Мясницкая улица 24/7с1, Москва (Чистые пруды) — map: https://yandex.ru/maps/-/CPcUm65t
+- **Location**: trainings at «Место быть», Мясницкая улица 24/7с1, Москва (Чистые пруды) — map: https://yandex.ru/maps/-/CPcUm65t (org id `119053995261`, coords `37.635179,55.762693`)
 - **Format**: 55-min group pilates on red-LED mats, small groups
 - **Language**: Russian (site content)
 
-## Design (v3 — 2026-08-04, per Sema's revisions)
+## Design (v5 — 2026-08-05, per Sema's new design doc)
 
-- Layout: **reformathletica.com** minimalism — thin lines, uppercase headings, airy spacing
-- Colors: **v1 gamma** (Sema asked to return it) — black `#0b0808` hero/header/contacts/footer, neon red `#ff2b2b` accent, crimson `#a4131f` + gradient section, cream/beige `#f7f1e6`/`#f2e9da`, gold `#d8a35c`
-- Fonts (as on reformathletica): **Tenor Sans** (headings, uppercase, bundled cyr+lat woff2 in `fonts/`) + Helvetica Neue light body (Onest bundled as fallback). Cormorant/Onest files from v1 remain in `fonts/`.
-- Header: sticky black blur, logo image (neon RL) + wordmark, uppercase letterspaced nav
-- Real studio photos (from Sema, 2026-08-04): hero = `img/training.jpg`, how-section = `img/room.jpg`, contacts = `img/lounge.jpg`. OG image uses training photo.
+- Editorial dark style: near-black `#0a0505` base, scarlet accent (`#e7263a` / bright `#ff3b4e`), dotted-LED divider motif (`.dot-rule`), beige `.theme-light` scope wraps method+team+FAQ sections
+- Fonts: **Fraunces** (serif headings) + **Manrope** (body) + **IBM Plex Mono** (eyebrows/UI chrome), loaded via Google Fonts CDN (not self-hosted — differs from v3/v4's bundled Tenor Sans)
+- Header: fixed blurred header, circular logo mark + wordmark, underline-hover nav, burger → `.nav-mobile` dropdown panel (mobile <900px)
+- Photos are the ones from Sema's new design doc (extracted from embedded base64 → real files, NOT re-encoded as base64 in HTML): hero = `img/hero-v2.jpg`, how-section = `img/process-v2.jpg`, photo-break = `img/recovery-v2.jpg`. Logo stays `img/logo.jpg` (neon RL). OG image (`img/og.jpg`) re-cropped from `hero-v2.jpg`. Older `img/training.jpg`, `room.jpg`, `lounge.jpg` are unused leftovers from v4, kept on disk.
+- Prices updated per new design doc: 2 800 ₽ single / 10 240 ₽ (4×2 560) / 18 560 ₽ (8×2 320) — replaces older estimates
+- Contacts map: **real embedded Yandex Maps iframe** (`map-widget/v1`, centered on resolved org coordinates), not a decorative placeholder — replaces the old fake SVG map + link-out
+- Animations: hover-lift on buttons/price cards, card icon scale on hover, nav underline sweep, slow image zoom on hero/process photos, scroll-triggered fade-in (`.reveal` + IntersectionObserver in `site.js`), breathing hero glow
+- **Gotcha**: "Red Light" as plain two-word text with a normal space caused the word "Red" to vanish when it landed at a line-wrap boundary next to Cyrillic text (reproduced in headless Chrome, both v1 and v2 old headless modes, not a font-load race). Fix: always write it as `Red&nbsp;Light` in body copy/headings (matches old site's convention). Meta tags/JSON-LD don't need it (not visually wrapped, and `&nbsp;` isn't decoded inside `<script type="application/ld+json">`).
 
 ## Structure
 
 Static, no build step:
-- `index.html` — hero, statement, benefits (colored cards), how (numbered rows), prices, team, FAQ, **booking form** (#booking), contacts
-- `schedule.html` — separate schedule page (per Sema) + same booking form
+- `index.html` — hero, method (theme-light), how it works, prices, photo break, team+FAQ (theme-light), booking form (#booking), contacts+map
+- `schedule.html` — separate schedule page (per Sema) with schedule rows + same booking form
 - `site.js` — shared: burger menu, reveal animations, form AJAX
-- `styles.css`, `fonts/`, `img/`
+- `styles.css`, `fonts/` (unused since v5, kept on disk), `img/`
 
 ## Booking form
 
@@ -33,12 +36,12 @@ Full on-site form (not Telegram) → **FormSubmit.co AJAX** → emails to simon.
 
 ## Status
 
-- **NOT deployed** — Sema said keep local (2026-08-04). Do not push/deploy without his OK.
+- **DEPLOYED** (Sema approved 2026-08-04): GitHub `lopushokbot/redlight-studio` → **https://lopushokbot.github.io/redlight-studio/** (Pages from `main` branch, root). Deploy = commit + `git push`.
 - Local preview: `python3 -m http.server 8734` from this folder → http://localhost:8734/
-- Canonical/OG URLs point to `https://lopushokbot.github.io/redlight-studio/` — update if final domain differs.
+- If a custom domain appears later: update canonical/OG URLs, sitemap.xml, robots.txt.
 
 ## Data that needs Sema's confirmation
 
-- **Prices** (3 500 ₽ / 4×12 800 ₽ / 8×23 200 ₽) — realistic estimates, NOT confirmed
+- **Prices** (2 800 ₽ / 4×10 240 ₽ / 8×18 560 ₽) — from Sema's v5 design doc, still worth a final confirmation
 - **Schedule** (Чт 15:30, Вс 17:00) — from IG posts of May 2026, may be stale
 - **Team section** — collective description (no names/photos yet)

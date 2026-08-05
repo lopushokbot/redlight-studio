@@ -16,9 +16,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
 <link rel="apple-touch-icon" href="img/favicon-192.png">
-<link rel="preload" href="fonts/tenorsans-400-cyr.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/tenorsans-400-lat.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {
@@ -44,221 +44,243 @@
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav__inner">
-    <a href="index.html" class="nav__logo" aria-label="Red Light — на главную">
-      <img class="nav__img" src="img/logo.jpg" alt="Логотип Red Light" width="640" height="640">
-      <span class="nav__name">Red&nbsp;Light</span>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">
+      <img class="logo-mark" src="img/logo.jpg" alt="Логотип Red Light" width="34" height="34">
+      Red Light
     </a>
-    <nav class="nav__links" aria-label="Основная навигация">
+    <nav class="nav-links">
       <a href="#prices">Цены</a>
       <a href="#team">Команда</a>
       <a href="schedule.html">Расписание</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <div class="nav__actions">
-      <a class="btn btn--red btn--sm nav__cta" href="#booking">Записаться</a>
-      <button class="nav__burger" id="burger" aria-label="Меню" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-    </div>
+    <a class="btn btn-solid nav-cta" href="#booking">Записаться</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <nav class="nav__mobile" id="navMobile" aria-label="Мобильная навигация">
+  <nav class="nav-mobile" id="navMobile" aria-label="Мобильная навигация">
     <a href="#prices">Цены</a>
     <a href="#team">Команда</a>
     <a href="schedule.html">Расписание</a>
     <a href="#contacts">Контакты</a>
-    <a href="#booking">Записаться</a>
+    <a class="btn btn-solid" href="#booking">Записаться</a>
   </nav>
 </header>
 
-<main>
+<main id="top">
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero__grid">
-      <div>
-        <p class="eyebrow">Red Light Pilates · Москва</p>
-        <h1 class="h1 hero__title">Первая студия пилатеса с использованием <span class="accent">Red&nbsp;Light</span> терапии в&nbsp;России</h1>
-        <p class="lead hero__sub">Пилатес на&nbsp;LED-ковриках в&nbsp;тёплом красном свете — глубокая работа с&nbsp;телом, восстановление и&nbsp;сияние кожи. Мясницкая, Москва.</p>
-        <div class="hero__cta">
-          <a class="btn btn--red" href="#booking">Записаться</a>
-          <a class="btn btn--light" href="schedule.html">Расписание</a>
+    <div class="hero-glow"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Red&nbsp;Light Pilates · Москва</span>
+        <h1>Первая студия пилатеса с Red&nbsp;Light терапией в России</h1>
+        <p class="lede">Пилатес на LED-ковриках в тёплом красном свете — глубокая работа с телом, восстановление и сияние кожи. Мясницкая, Москва.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#booking">Записаться</a>
+          <a class="btn btn-ghost" href="schedule.html">Расписание</a>
         </div>
       </div>
-      <div class="hero__art">
-        <img class="hero__img" src="img/training.jpg" alt="Тренировка Red Light Pilates на LED-ковриках" width="720" height="1280">
+      <div class="hero-media">
+        <img src="img/hero-v2.jpg" alt="Тренировка Red Light Pilates на LED-ковриках" width="1400" height="1866" loading="eager">
       </div>
     </div>
   </section>
 
-  <!-- STATEMENT -->
-  <section class="section section--cream center">
-    <div class="container">
-      <p class="statement reveal">Red Light — это больше, чем пилатес. Это час в&nbsp;<span class="accent">красном свете</span>, который работает на&nbsp;тело, кожу и&nbsp;нервную систему одновременно.</p>
-    </div>
-  </section>
+  <div class="dot-rule"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
-  <!-- ABOUT / FEATURES -->
-  <section class="section" id="about">
-    <div class="container">
-      <p class="eyebrow reveal">Что такое Red Light терапия</p>
-      <h2 class="h2 reveal">Тот же пилатес. Другой уровень</h2>
-      <p class="lead reveal">Red Light терапия — воздействие красного и&nbsp;ближнего инфракрасного света на&nbsp;тело. Мы&nbsp;соединили её с&nbsp;классическим пилатесом: вся тренировка проходит на&nbsp;специальных LED-ковриках, и&nbsp;свет работает на&nbsp;вас все 55&nbsp;минут.</p>
-      <div class="features">
-        <article class="feature feature--beige reveal">
-          <span class="feature__check">✓</span>
-          <h3>Кожа и&nbsp;коллаген</h3>
-          <p>Красный свет стимулирует выработку коллагена — кожа выглядит более упругой и&nbsp;сияющей.</p>
-        </article>
-        <article class="feature feature--blush reveal">
-          <span class="feature__check">✓</span>
-          <h3>Восстановление и&nbsp;меньше стресса</h3>
-          <p>Свет помогает мышцам восстанавливаться быстрее, а&nbsp;тёплое красное свечение расслабляет нервную систему. Час тренировки ощущается как ритуал заботы о&nbsp;себе.</p>
-        </article>
-        <article class="feature feature--sand reveal">
-          <span class="feature__check">✓</span>
-          <h3>Глубокая работа с&nbsp;телом</h3>
-          <p>Пилатес укрепляет мышцы кора, выравнивает осанку и&nbsp;возвращает телу лёгкость движения.</p>
-        </article>
+  <!-- WHAT IS RED LIGHT -->
+  <div class="theme-light">
+  <section id="method">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Что такое Red&nbsp;Light терапия</span>
+        <h2>Тот же пилатес. Другой уровень</h2>
+        <p>Red&nbsp;Light терапия — воздействие красного и ближнего инфракрасного света на тело. Мы соединили её с классическим пилатесом: вся тренировка проходит на специальных LED-ковриках, и свет работает на вас все 55&nbsp;минут.</p>
+      </div>
+      <div class="cards reveal">
+        <div class="card">
+          <div class="mk">✓</div>
+          <h3>Быстрое восстановление</h3>
+          <p>Красный и ближний инфракрасный свет дополняют тренировку, помогая телу быстрее восстанавливаться после нагрузки и уменьшая ощущение усталости.</p>
+        </div>
+        <div class="card">
+          <div class="mk">✓</div>
+          <h3>Здоровое сияние кожи</h3>
+          <p>Световая терапия стимулирует естественные процессы обновления кожи, помогая поддерживать её упругость, гладкость и здоровый внешний вид.</p>
+        </div>
+        <div class="card">
+          <div class="mk">✓</div>
+          <h3>Меньше стресса — больше энергии</h3>
+          <p>Каждая тренировка становится временем, когда вы одновременно укрепляете мышцы, успокаиваете нервную систему и возвращаете лёгкость движения.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW -->
-  <section class="section section--red" id="how">
-    <div class="container">
-      <p class="eyebrow reveal">Как проходят тренировки</p>
-      <h2 class="h2 reveal">55 минут в&nbsp;красном свете</h2>
-      <div class="how__grid">
-      <img class="how__img reveal" src="img/room.jpg" alt="Зал Red Light — LED-коврики в красном свете" width="720" height="1280">
-      <div class="rows">
-        <div class="row reveal">
-          <span class="row__num">01</span>
-          <h3>Малые группы</h3>
-          <p>Занимаемся небольшими группами — тренер видит каждого и&nbsp;корректирует технику лично.</p>
-        </div>
-        <div class="row reveal">
-          <span class="row__num">02</span>
-          <h3>LED-коврики</h3>
-          <p>Вся тренировка проходит на&nbsp;ковриках из&nbsp;сотен красных LED-диодов — свет работает, пока работаете вы.</p>
-        </div>
-        <div class="row reveal">
-          <span class="row__num">03</span>
-          <h3>Для любого уровня</h3>
-          <p>Подойдёт и&nbsp;новичкам, и&nbsp;опытным — нагрузка адаптируется под вас. Коврики и&nbsp;всё оборудование уже в&nbsp;студии.</p>
-        </div>
+
+  <!-- HOW IT WORKS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Как проходят тренировки</span>
+        <h2>55 минут в красном свете</h2>
       </div>
+      <div class="how">
+        <div class="how-media reveal">
+          <img src="img/process-v2.jpg" alt="Зал Red Light — LED-коврики в красном свете" width="1400" height="1866" loading="lazy">
+        </div>
+        <div class="steps reveal">
+          <div class="step">
+            <span class="num">01</span>
+            <div><h3>Малые группы</h3><p>Занимаемся небольшими группами — тренер видит каждого и корректирует технику лично.</p></div>
+          </div>
+          <div class="step">
+            <span class="num">02</span>
+            <div><h3>LED-коврики</h3><p>Вся тренировка проходит на ковриках из сотен красных LED-диодов — свет работает, пока работаете вы.</p></div>
+          </div>
+          <div class="step">
+            <span class="num">03</span>
+            <div><h3>Для любого уровня</h3><p>Подойдёт и новичкам, и опытным — нагрузка адаптируется под вас. Коврики и всё оборудование уже в студии.</p></div>
+          </div>
+          <div class="step">
+            <span class="num">04</span>
+            <div><h3>Продуманная практика</h3><p>55 минут включают разминку и растяжку, основную тренировку на всё тело с малым оборудованием и завершающую медитацию.</p></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+  </div>
 
   <!-- PRICES -->
-  <section class="section" id="prices">
-    <div class="container">
-      <p class="eyebrow reveal">Цены</p>
-      <h2 class="h2 reveal">Просто и&nbsp;прозрачно</h2>
-      <div class="prices">
-        <article class="price reveal">
+  <section id="prices">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Цены</span>
+        <h2>Просто и прозрачно</h2>
+      </div>
+      <div class="prices reveal">
+        <div class="price-card">
           <h3>Разовое занятие</h3>
-          <p class="price__value">3 500 ₽</p>
-          <p class="price__desc">Одна тренировка 55&nbsp;минут. Всё оборудование включено.</p>
-          <a class="btn" href="#booking">Записаться</a>
-        </article>
-        <article class="price price--hot reveal">
-          <span class="price__badge">Популярно</span>
+          <div class="amount">2 800 ₽</div>
+          <p>Одна тренировка 55 минут. Всё оборудование включено.</p>
+          <a class="btn btn-ghost" href="#booking">Записаться</a>
+        </div>
+        <div class="price-card pop">
+          <span class="tag">Популярно</span>
           <h3>Абонемент · 4 занятия</h3>
-          <p class="price__value">12 800 ₽</p>
-          <p class="price__desc">3 200 ₽ за&nbsp;занятие. Месяц регулярной практики — виден результат.</p>
-          <a class="btn" href="#booking">Записаться</a>
-        </article>
-        <article class="price reveal">
+          <div class="amount">10 240 ₽</div>
+          <p>2 560 ₽ за занятие. Месяц регулярной практики — виден результат.</p>
+          <a class="btn btn-solid" href="#booking">Записаться</a>
+        </div>
+        <div class="price-card">
           <h3>Абонемент · 8 занятий</h3>
-          <p class="price__value">23 200 ₽</p>
-          <p class="price__desc">2 900 ₽ за&nbsp;занятие. Максимум эффекта от&nbsp;света и&nbsp;пилатеса.</p>
-          <a class="btn" href="#booking">Записаться</a>
-        </article>
+          <div class="amount">18 560 ₽</div>
+          <p>2 320 ₽ за занятие. Максимум эффекта от света и пилатеса.</p>
+          <a class="btn btn-ghost" href="#booking">Записаться</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="photo-break-section">
+    <div class="wrap">
+      <div class="break break-inline reveal">
+        <img src="img/recovery-v2.jpg" alt="Восстановление после тренировки на LED-ковриках Red Light" width="1400" height="1866" loading="lazy">
       </div>
     </div>
   </section>
 
   <!-- TEAM -->
-  <section class="section section--cream" id="team">
-    <div class="container">
-      <p class="eyebrow reveal">Команда</p>
-      <h2 class="h2 reveal">Наши тренеры</h2>
-      <p class="lead reveal">Сертифицированные тренеры по&nbsp;пилатесу, влюблённые в&nbsp;своё дело. Мы&nbsp;следим за&nbsp;техникой каждого гостя, бережно работаем с&nbsp;телом и&nbsp;делаем так, чтобы вам хотелось вернуться.</p>
-      <div class="rows">
-        <div class="row reveal">
-          <span class="row__num">✦</span>
+  <div class="theme-light">
+  <section id="team">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Команда</span>
+        <h2>Наши тренеры</h2>
+        <p>Сертифицированные тренеры по пилатесу, влюблённые в своё дело. Мы следим за техникой каждого гостя, бережно работаем с телом и делаем так, чтобы вам хотелось вернуться.</p>
+      </div>
+      <div class="team-cards reveal">
+        <div class="card">
+          <div class="mk">✦</div>
           <h3>Сертификация</h3>
-          <p>Тренеры с&nbsp;профессиональным образованием в&nbsp;пилатесе и&nbsp;опытом работы с&nbsp;разными уровнями подготовки.</p>
+          <p>Тренеры с профессиональным образованием в пилатесе и опытом работы с разными уровнями подготовки.</p>
         </div>
-        <div class="row reveal">
-          <span class="row__num">✦</span>
-          <h3>Внимание к&nbsp;каждому</h3>
-          <p>Малые группы — значит, тренер успевает поправить технику и&nbsp;подобрать вариант упражнения именно вам.</p>
+        <div class="card">
+          <div class="mk">✦</div>
+          <h3>Внимание к каждому</h3>
+          <p>Малые группы — значит, тренер успевает поправить технику и подобрать вариант упражнения именно вам.</p>
         </div>
-        <div class="row reveal">
-          <span class="row__num">✦</span>
-          <h3>Забота, а&nbsp;не&nbsp;муштра</h3>
-          <p>Никакого «ещё десять раз через не&nbsp;могу». Тренировка — это час для себя, а&nbsp;не&nbsp;экзамен.</p>
+        <div class="card">
+          <div class="mk">✦</div>
+          <h3>Забота, а не муштра</h3>
+          <p>Никакого «ещё десять раз через не могу». Тренировка — это час для себя, а не экзамен.</p>
         </div>
       </div>
-      <p class="note reveal">Познакомиться с&nbsp;командой ближе можно в&nbsp;нашем <a href="https://www.instagram.com/redlightmsk" target="_blank" rel="noopener">Instagram</a>.</p>
+      <p class="team-note reveal">Познакомиться с командой ближе можно в нашем <a href="https://www.instagram.com/redlightmsk" target="_blank" rel="noopener">Instagram</a>.</p>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section" id="faq">
-    <div class="container container--narrow">
-      <p class="eyebrow reveal">Вопросы</p>
-      <h2 class="h2 reveal">Частые вопросы</h2>
-      <div class="faq reveal">
-        <details>
+  <section id="faq">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Вопросы</span>
+        <h2>Частые вопросы</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item" open>
           <summary>Я никогда не занималась пилатесом. Мне подойдёт?</summary>
-          <p>Да. Группы небольшие, тренер адаптирует нагрузку под ваш уровень и следит за техникой. Большинство наших гостей начинали с нуля.</p>
+          <div class="a">Да. Группы небольшие, тренер адаптирует нагрузку под ваш уровень и следит за техникой. Большинство наших гостей начинали с нуля.</div>
         </details>
-        <details>
+        <details class="faq-item">
           <summary>Что взять с собой?</summary>
-          <p>Удобную спортивную одежду и носочки. Коврики, оборудование и вода — уже в студии. Заниматься на LED-ковриках приятнее в форме, открывающей кожу — так свет работает эффективнее.</p>
+          <div class="a">Удобную спортивную одежду и носочки. Коврики, оборудование и вода — уже в студии. Заниматься на LED-ковриках приятнее в форме, открывающей кожу — так свет работает эффективнее.</div>
         </details>
-        <details>
-          <summary>Безопасна ли Red Light терапия?</summary>
-          <p>Красный свет — неинвазивное и мягкое воздействие без УФ-излучения. Есть ограничения: беременность, онкология, эпилепсия, приём фотосенсибилизирующих препаратов. Если сомневаетесь — напишите нам, подскажем.</p>
+        <details class="faq-item">
+          <summary>Безопасна ли Red&nbsp;Light терапия?</summary>
+          <div class="a">Красный свет — неинвазивное и мягкое воздействие без УФ-излучения. Есть ограничения: беременность, онкология, эпилепсия, приём фотосенсибилизирующих препаратов. Если сомневаетесь — напишите нам, подскажем.</div>
         </details>
-        <details>
+        <details class="faq-item">
           <summary>Где проходят тренировки?</summary>
-          <p>В пространстве «Место be» в центре Москвы: <a href="https://yandex.ru/maps/-/CPcUm65t" target="_blank" rel="noopener">Мясницкая улица, 24/7с1</a> — несколько минут пешком от метро Чистые пруды и Тургеневская.</p>
+          <div class="a">В пространстве «Место быть» в центре Москвы: <a href="https://yandex.ru/maps/org/mesto_byt/119053995261" target="_blank" rel="noopener">Мясницкая улица, 24/7с1</a> — несколько минут пешком от метро Чистые пруды и Тургеневская.</div>
         </details>
-        <details>
+        <details class="faq-item">
           <summary>Как записаться?</summary>
-          <p>Заполните <a href="#booking">форму записи</a> — мы подтвердим место и ответим на вопросы. Запись обязательна: группы маленькие. Если удобнее — напишите в <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram</a>.</p>
+          <div class="a">Заполните <a href="#booking">форму записи</a> — мы подтвердим место и ответим на вопросы. Запись обязательна: группы маленькие. Если удобнее — напишите в <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram</a>.</div>
         </details>
       </div>
     </div>
   </section>
+  </div>
 
   <!-- BOOKING -->
-  <section class="section section--cream" id="booking">
-    <div class="container container--narrow center">
-      <p class="eyebrow reveal">Запись</p>
-      <h2 class="h2 reveal">Записаться на&nbsp;тренировку</h2>
-      <p class="lead reveal">Оставьте заявку — мы свяжемся с&nbsp;вами, подтвердим место и&nbsp;ответим на&nbsp;вопросы.</p>
-      <form class="form reveal" id="bookingForm" novalidate>
-        <div class="form__grid">
+  <section id="booking">
+    <div class="wrap booking">
+      <div class="booking-note reveal">
+        <span class="eyebrow">Запись</span>
+        <h2>Записаться на тренировку</h2>
+        <p>Оставьте заявку — мы свяжемся с вами, подтвердим место и ответим на вопросы.</p>
+      </div>
+      <form id="bookingForm" class="reveal" novalidate>
+        <div class="row2">
           <div class="field">
-            <label for="fName">Имя</label>
-            <input id="fName" name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться">
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" autocomplete="name" required placeholder="Как к вам обращаться">
           </div>
           <div class="field">
-            <label for="fPhone">Телефон</label>
-            <input id="fPhone" name="phone" type="tel" autocomplete="tel" required placeholder="+7 ___ ___-__-__">
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="+7 ___ ___-__-__">
           </div>
         </div>
         <div class="field">
-          <label for="fSlot">Тренировка</label>
-          <select id="fSlot" name="slot" required>
+          <label for="slot">Тренировка</label>
+          <select id="slot" name="slot" required>
             <option value="" disabled selected>Выберите время</option>
             <option>Четверг · 15:30</option>
             <option>Воскресенье · 17:00</option>
@@ -266,55 +288,68 @@
           </select>
         </div>
         <div class="field">
-          <label for="fMsg">Комментарий</label>
-          <textarea id="fMsg" name="message" placeholder="Опыт в пилатесе, вопросы — всё, что нам стоит знать (необязательно)"></textarea>
+          <label for="comment">Комментарий</label>
+          <textarea id="comment" name="comment" rows="3" placeholder="Опыт в пилатесе, вопросы — всё, что нам стоит знать (необязательно)"></textarea>
         </div>
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <button class="btn btn--red form__submit" type="submit" id="submitBtn">Отправить заявку</button>
-        <p class="form__status" id="formStatus" role="status"></p>
-        <p class="form__hint">Нажимая «Отправить», вы соглашаетесь на обработку персональных данных. Удобнее мессенджер? Напишите в <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram</a>.</p>
+        <button type="submit" class="btn btn-solid" style="justify-self:start">Отправить заявку</button>
+        <p class="form-msg" id="formMsg" role="status"></p>
+        <p class="consent">Нажимая «Отправить», вы соглашаетесь на обработку персональных данных. Удобнее мессенджер? Напишите в <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram</a>.</p>
       </form>
     </div>
   </section>
 
-  <!-- CONTACTS -->
-  <section class="section section--dark center" id="contacts">
-    <div class="container">
-      <p class="eyebrow reveal">Контакты</p>
-      <h2 class="h2 reveal">Приходите в&nbsp;красный свет</h2>
-      <div class="contacts reveal">
-        <div class="contacts__item">
-          <span class="contacts__label">Адрес</span>
-          <a href="https://yandex.ru/maps/-/CPcUm65t" target="_blank" rel="noopener">Москва, Мясницкая улица, 24/7с1<br><span class="contacts__hint">пространство «Место be» · Чистые пруды · открыть в Яндекс.Картах</span></a>
+  <!-- CONTACTS + MAP -->
+  <section id="contacts">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Контакты</span>
+        <h2>Приходите в красный свет</h2>
+      </div>
+
+      <div class="contacts-grid reveal">
+        <div class="contact-block">
+          <h3>Адрес</h3>
+          <p>Москва, Мясницкая улица, 24/7с1<br>пространство «Место быть» · Чистые пруды</p>
+          <a href="https://yandex.ru/maps/org/mesto_byt/119053995261" target="_blank" rel="noopener">Открыть в Яндекс.Картах →</a>
         </div>
-        <div class="contacts__item">
-          <span class="contacts__label">Запись</span>
-          <a href="#booking">Форма онлайн-записи</a><br>
-          <a href="https://t.me/redlightmsk" target="_blank" rel="noopener"><span class="contacts__hint">Telegram · @redlightmsk</span></a>
-        </div>
-        <div class="contacts__item">
-          <span class="contacts__label">Соцсети</span>
-          <a href="https://www.instagram.com/redlightmsk" target="_blank" rel="noopener">Instagram · @redlightmsk</a><br>
-          <a href="https://t.me/redlightmsk" target="_blank" rel="noopener"><span class="contacts__hint">Telegram-канал</span></a>
+        <div class="contact-block">
+          <h3>Запись</h3>
+          <a href="#booking">Форма онлайн-записи</a>
+          <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram · @redlightmsk</a>
+          <h3 style="margin-top:1.6rem">Соцсети</h3>
+          <a href="https://www.instagram.com/redlightmsk" target="_blank" rel="noopener">Instagram · @redlightmsk</a>
+          <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram-канал</a>
         </div>
       </div>
-      <img class="contacts__photo reveal" src="img/lounge.jpg" alt="Лаунж-зона пространства «Место be»" width="720" height="1280">
+
+      <div class="map-wrap reveal">
+        <iframe class="map-embed" src="https://yandex.ru/map-widget/v1/?ll=37.635179%2C55.762693&z=16&pt=37.635179,55.762693,pm2rdm" loading="lazy" title="Red Light на карте — Мясницкая улица, 24/7с1" aria-label="Карта: Место быть, Мясницкая улица, 24/7с1"></iframe>
+        <a class="map-link" href="https://yandex.ru/maps/-/CPcUm65t" target="_blank" rel="noopener">
+          <span>Место быть · Мясницкая, 24/7с1</span>
+          <span>Открыть карту →</span>
+        </a>
+      </div>
+
     </div>
   </section>
 
 </main>
 
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__brand">
-      <img class="footer__img" src="img/logo.jpg" alt="Red Light" width="640" height="640">
-      <p>© 2026 Red Light — студия пилатеса с Red Light терапией, Москва</p>
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <a class="logo" href="#top">
+        <img class="logo-mark" src="img/logo.jpg" alt="Red Light" width="28" height="28">
+        Red Light
+      </a>
+      <div class="foot-links">
+        <a href="schedule.html">Расписание</a>
+        <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://www.instagram.com/redlightmsk" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
-    <div class="footer__links">
-      <a href="schedule.html">Расписание</a>
-      <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://www.instagram.com/redlightmsk" target="_blank" rel="noopener">Instagram</a>
-    </div>
+    <p class="foot-copy">© 2026 Red&nbsp;Light — студия пилатеса с Red&nbsp;Light терапией, Москва</p>
   </div>
 </footer>
 

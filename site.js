@@ -22,14 +22,15 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 // Booking form → FormSubmit (AJAX)
 const form = document.getElementById('bookingForm');
 if (form) {
-  const status = document.getElementById('formStatus');
-  const btn = document.getElementById('submitBtn');
+  const status = document.getElementById('formMsg');
+  const btn = form.querySelector('button[type="submit"]');
   form.addEventListener('submit', async e => {
     e.preventDefault();
     if (!form.reportValidity()) return;
+    const submitLabel = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Отправляем…';
-    status.className = 'form__status';
+    status.className = 'form-msg';
     try {
       const data = Object.fromEntries(new FormData(form).entries());
       const res = await fetch('https://formsubmit.co/ajax/simon.sivakov@icloud.com', {
@@ -40,8 +41,8 @@ if (form) {
           _template: 'table',
           'Имя': data.name,
           'Телефон': data.phone,
-          'Тренировка': data.slot,
-          'Комментарий': data.message || '—',
+          'Тренировка': data.slot || '—',
+          'Комментарий': data.comment || '—',
           _honey: data._honey || ''
         })
       });
@@ -51,10 +52,9 @@ if (form) {
       status.classList.add('is-ok');
     } catch (err) {
       status.textContent = 'Не получилось отправить. Напишите нам в Telegram — @redlightmsk.';
-      status.classList.add('is-err');
     } finally {
       btn.disabled = false;
-      btn.textContent = 'Отправить заявку';
+      btn.textContent = submitLabel;
     }
   });
 }
