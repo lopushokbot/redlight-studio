@@ -100,7 +100,7 @@
       <div class="head reveal">
         <span class="eyebrow">Что такое Red&nbsp;Light терапия</span>
         <h2>Тот же пилатес. Другой уровень</h2>
-        <p>Red&nbsp;Light терапия — воздействие красного и ближнего инфракрасного света на тело. Мы соединили её с классическим пилатесом: вся тренировка проходит на специальных LED-ковриках, и свет работает на вас все 55&nbsp;минут.</p>
+        <p>Red&nbsp;Light терапия — воздействие красного и ближнего инфракрасного света на тело. Мы соединили её с классическим пилатесом: вся тренировка проходит на специальных LED-ковриках, и свет работает на вас все 55 минут.</p>
       </div>
       <div class="cards reveal">
         <div class="card">
@@ -282,8 +282,8 @@
           <label for="slot">Тренировка</label>
           <select id="slot" name="slot" required>
             <option value="" disabled selected>Выберите время</option>
-            <option>Четверг · 15:30</option>
-            <option>Воскресенье · 17:00</option>
+            <option>Вс, 4 октября · 12:00</option>
+            <option>Вс, 4 октября · 18:00</option>
             <option>Другое время / уточнить</option>
           </select>
         </div>
@@ -324,7 +324,7 @@
       </div>
 
       <div class="map-wrap reveal">
-        <iframe class="map-embed" src="https://yandex.ru/map-widget/v1/?ll=37.635179%2C55.762693&z=16&pt=37.635179,55.762693,pm2rdm" loading="lazy" title="Red Light на карте — Мясницкая улица, 24/7с1" aria-label="Карта: Место быть, Мясницкая улица, 24/7с1"></iframe>
+        <iframe class="map-embed" src="https://yandex.ru/map-widget/v1/?ll=37.635179%2C55.762693&z=16&pt=37.635179,55.762693,pm2rdm" loading="lazy" title="Red Light на карте — Мясницкая, 24/7с1" allowfullscreen></iframe>
         <a class="map-link" href="https://yandex.ru/maps/-/CPcUm65t" target="_blank" rel="noopener">
           <span>Место быть · Мясницкая, 24/7с1</span>
           <span>Открыть карту →</span>
@@ -354,5 +354,33 @@
 </footer>
 
 <script src="site.js"></script>
+<script>
+(function () {
+  var TG_USERNAME = 'aleksiv_s'; // ← username без @, куда приходят заявки
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (form.id !== 'bookingForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    var msg = document.getElementById('formMsg');
+    if (form.querySelector('[name="_honey"]').value) return;
+    var name = document.getElementById('name').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var slot = document.getElementById('slot').value;
+    var comment = document.getElementById('comment').value.trim();
+    if (!name || !phone || !slot) {
+      msg.textContent = 'Пожалуйста, укажите имя, телефон и время тренировки.';
+      return;
+    }
+    var text = 'Здравствуйте! Хочу записаться на тренировку Red Light.\n\n' +
+      'Имя: ' + name + '\nТелефон: ' + phone + '\nТренировка: ' + slot +
+      (comment ? '\nКомментарий: ' + comment : '');
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(function () {});
+    msg.textContent = 'Открываем Telegram… Если текст не подставился, вставьте его в чат — заявка уже скопирована.';
+    var url = 'https://t.me/' + TG_USERNAME + '?text=' + encodeURIComponent(text);
+    if (!window.open(url, '_blank')) window.location.href = url;
+  }, true);
+})();
+</script>
 </body>
 </html>

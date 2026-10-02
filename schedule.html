@@ -63,14 +63,14 @@
     <div class="wrap">
       <div class="sched reveal">
         <div class="sched-row">
-          <span class="sched-day">Четверг</span>
-          <span class="sched-time">15:30</span>
+          <span class="sched-day">Вс, 4 октября</span>
+          <span class="sched-time">12:00</span>
           <span class="sched-what">Red&nbsp;Light Pilates · 55 мин · малая группа</span>
           <a class="btn btn-ghost" href="#booking">Записаться</a>
         </div>
         <div class="sched-row">
-          <span class="sched-day">Воскресенье</span>
-          <span class="sched-time">17:00</span>
+          <span class="sched-day">Вс, 4 октября</span>
+          <span class="sched-time">18:00</span>
           <span class="sched-what">Red&nbsp;Light Pilates · 55 мин · малая группа</span>
           <a class="btn btn-ghost" href="#booking">Записаться</a>
         </div>
@@ -104,8 +104,8 @@
           <label for="slot">Тренировка</label>
           <select id="slot" name="slot" required>
             <option value="" disabled selected>Выберите время</option>
-            <option>Четверг · 15:30</option>
-            <option>Воскресенье · 17:00</option>
+            <option>Вс, 4 октября · 12:00</option>
+            <option>Вс, 4 октября · 18:00</option>
             <option>Другое время / уточнить</option>
           </select>
         </div>
@@ -141,5 +141,33 @@
 </footer>
 
 <script src="site.js"></script>
+<script>
+(function () {
+  var TG_USERNAME = 'aleksiv_s'; // ← username без @, куда приходят заявки
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (form.id !== 'bookingForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    var msg = document.getElementById('formMsg');
+    if (form.querySelector('[name="_honey"]').value) return;
+    var name = document.getElementById('name').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var slot = document.getElementById('slot').value;
+    var comment = document.getElementById('comment').value.trim();
+    if (!name || !phone || !slot) {
+      msg.textContent = 'Пожалуйста, укажите имя, телефон и время тренировки.';
+      return;
+    }
+    var text = 'Здравствуйте! Хочу записаться на тренировку Red Light.\n\n' +
+      'Имя: ' + name + '\nТелефон: ' + phone + '\nТренировка: ' + slot +
+      (comment ? '\nКомментарий: ' + comment : '');
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(function () {});
+    msg.textContent = 'Открываем Telegram… Если текст не подставился, вставьте его в чат — заявка уже скопирована.';
+    var url = 'https://t.me/' + TG_USERNAME + '?text=' + encodeURIComponent(text);
+    if (!window.open(url, '_blank')) window.location.href = url;
+  }, true);
+})();
+</script>
 </body>
 </html>
