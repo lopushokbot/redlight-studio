@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Расписание — Red Light | Студия пилатеса с Red Light терапией, Москва</title>
+<meta name="description" content="Расписание тренировок Red Light Pilates в Москве: занятия на LED-ковриках в пространстве «Место быть», Мясницкая 24/7с1. Онлайн-запись.">
+<link rel="canonical" href="https://lopushokbot.github.io/redlight-studio/schedule.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Red Light">
+<meta property="og:title" content="Расписание тренировок — Red Light">
+<meta property="og:description" content="Тренировки пилатеса на LED-ковриках в центре Москвы. Малые группы, запись онлайн.">
+<meta property="og:image" content="https://lopushokbot.github.io/redlight-studio/img/og.jpg">
+<meta property="og:url" content="https://lopushokbot.github.io/redlight-studio/schedule.html">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
+<link rel="apple-touch-icon" href="img/favicon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">
+      <img class="logo-mark" src="img/logo.jpg" alt="Логотип Red Light" width="34" height="34">
+      Red Light
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#prices">Цены</a>
+      <a href="index.html#team">Команда</a>
+      <a href="schedule.html">Расписание</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn-solid nav-cta" href="#booking">Записаться</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Мобильная навигация">
+    <a href="index.html#prices">Цены</a>
+    <a href="index.html#team">Команда</a>
+    <a href="schedule.html">Расписание</a>
+    <a href="index.html#contacts">Контакты</a>
+    <a class="btn btn-solid" href="#booking">Записаться</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero" style="padding-bottom:0">
+    <div class="hero-glow"></div>
+    <div class="wrap" style="position:relative;z-index:1">
+      <span class="eyebrow">Расписание</span>
+      <h1>Ближайшие тренировки</h1>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <div class="wrap">
+      <div class="sched reveal">
+        <div class="sched-row">
+          <span class="sched-day">Вс, 11 октября</span>
+          <span class="sched-time">14:30</span>
+          <span class="sched-what">Red&nbsp;Light Pilates · 55 мин · малая группа</span>
+          <a class="btn btn-ghost" href="#booking">Записаться</a>
+        </div>
+        <div class="sched-row">
+          <span class="sched-day">Вс, 11 октября</span>
+          <span class="sched-time">17:00</span>
+          <span class="sched-what">Red&nbsp;Light Pilates · 55 мин · малая группа</span>
+          <a class="btn btn-ghost" href="#booking">Записаться</a>
+        </div>
+      </div>
+      <p class="sched-note reveal">Все тренировки проходят в пространстве «Место быть»: <a href="https://yandex.ru/maps/-/CPcUm65t" target="_blank" rel="noopener">Мясницкая улица, 24/7с1</a>. Актуальные даты и свободные места — в нашем <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram-канале</a>. Группы небольшие, места заканчиваются быстро.</p>
+    </div>
+  </section>
+
+  <div class="dot-rule"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <!-- BOOKING -->
+  <section id="booking">
+    <div class="wrap booking">
+      <div class="booking-note reveal">
+        <span class="eyebrow">Запись</span>
+        <h2>Записаться на тренировку</h2>
+        <p>Оставьте заявку — мы свяжемся с вами, подтвердим место и ответим на вопросы.</p>
+      </div>
+      <form id="bookingForm" class="reveal" novalidate>
+        <div class="row2">
+          <div class="field">
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" autocomplete="name" required placeholder="Как к вам обращаться">
+          </div>
+          <div class="field">
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="+7 ___ ___-__-__">
+          </div>
+        </div>
+        <div class="field">
+          <label for="slot">Тренировка</label>
+          <select id="slot" name="slot" required>
+            <option value="" disabled selected>Выберите время</option>
+            <option>Вс, 11 октября · 14:30</option>
+            <option>Вс, 11 октября · 17:00</option>
+            <option>Другое время / уточнить</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="comment">Комментарий</label>
+          <textarea id="comment" name="comment" rows="3" placeholder="Опыт в пилатесе, вопросы — всё, что нам стоит знать (необязательно)"></textarea>
+        </div>
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" class="btn btn-solid" style="justify-self:start">Отправить заявку</button>
+        <p class="form-msg" id="formMsg" role="status"></p>
+        <p class="consent">Нажимая «Отправить», вы соглашаетесь на обработку персональных данных. Удобнее мессенджер? Напишите в <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram</a>.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <a class="logo" href="index.html">
+        <img class="logo-mark" src="img/logo.jpg" alt="Red Light" width="28" height="28">
+        Red Light
+      </a>
+      <div class="foot-links">
+        <a href="index.html">Главная</a>
+        <a href="https://t.me/redlightmsk" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://www.instagram.com/redlightmsk" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <p class="foot-copy">© 2026 Red&nbsp;Light — студия пилатеса с Red&nbsp;Light терапией, Москва</p>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function () {
+  var TG_USERNAME = 'aleksiv_s'; // ← username без @, куда приходят заявки
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (form.id !== 'bookingForm') return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    var msg = document.getElementById('formMsg');
+    if (form.querySelector('[name="_honey"]').value) return;
+    var name = document.getElementById('name').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var slot = document.getElementById('slot').value;
+    var comment = document.getElementById('comment').value.trim();
+    if (!name || !phone || !slot) {
+      msg.textContent = 'Пожалуйста, укажите имя, телефон и время тренировки.';
+      return;
+    }
+    var text = 'Здравствуйте! Хочу записаться на тренировку Red Light.\n\n' +
+      'Имя: ' + name + '\nТелефон: ' + phone + '\nТренировка: ' + slot +
+      (comment ? '\nКомментарий: ' + comment : '');
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(function () {});
+    msg.textContent = 'Открываем Telegram… Если текст не подставился, вставьте его в чат — заявка уже скопирована.';
+    var url = 'https://t.me/' + TG_USERNAME + '?text=' + encodeURIComponent(text);
+    if (!window.open(url, '_blank')) window.location.href = url;
+  }, true);
+})();
+</script>
+</body>
+</html>
